@@ -1,0 +1,57 @@
+//count how many times "DAC" cocure
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        int count=0;
+         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter String:");
+        String str = sc.nextLine();
+        String arra1[]=str.split(" ");
+        for(int i=0;i<arra1.length;i++){
+             if (arra1[i].contains("DAC")) {
+                count++; 
+            }
+        }
+        System.out.println(count);
+        
+    }
+}
+
+************************************************************************Another way
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int arr[] = {5, 6, 9, 5, 4, 15, 5, 26, 9};
+        
+        // ArrayList to track duplicates
+        ArrayList<Integer> duplicates = new ArrayList<>();
+        
+        // Set to track elements that have been seen
+        Set<Integer> seen = new HashSet<>();
+        
+        // Set to track elements that are duplicates
+        Set<Integer> duplicatesSet = new HashSet<>();
+        
+        for (int num : arr) {
+            if (seen.contains(num)) {
+                // If the number has already been seen, it's a duplicate
+                duplicatesSet.add(num);  // Add to duplicates set
+            } else {
+                // If the number has not been seen before, add it to the seen set
+                seen.add(num);  
+            }
+        }
+        
+        // Convert duplicatesSet to ArrayList for output
+        duplicates.addAll(duplicatesSet);
+        
+        // Print the duplicate numbers
+        for (int num : duplicates) {
+            System.out.println("Number that occurs multiple times: " + num);
+        }
+    }
+}
