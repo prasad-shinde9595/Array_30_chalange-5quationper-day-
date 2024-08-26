@@ -1,0 +1,34 @@
+package practice;
+import java.io.ObjectInputStream.GetField;
+import java.util.Set;
+
+import javax.management.loading.PrivateClassLoader;
+import javax.tools.JavaFileObject;
+
+
+
+public class demo {
+	
+	public int primenumber(int a) {
+		if(a==2) {
+			return 1;
+		}
+		for(int i=2;i<=a/2;i++) {
+			if(a%i==0) {
+				return 0;
+			}
+		}
+		return 1;
+	}
+	public static void main(String[] args) {
+		demo d1=new demo();
+		for(int i=2;i<=20;i++) {
+			int result=d1.primenumber(i);
+			if(result==1) {
+				System.out.println(i);
+			}
+		}
+    
+	}
+
+}
